@@ -12,7 +12,7 @@ def join_connection():
 
         soc = socket.socket()
         host = '127.0.0.1'
-        #host = '192.168.56.1'
+        #host = 'xxx.xxx.xxx.1'
         port = 3306
 
         print('[i] attempting to connect to {}:{}'.format(host, port))
