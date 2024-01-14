@@ -10,9 +10,8 @@ def join_connection():
         global host
         global port
 
-        soc = socket.socket()
+        soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         host = '127.0.0.1'
-        #host = 'xxx.xxx.xxx.1'
         port = 7878
 
         print('[i] attempting to connect to {}:{}'.format(host, port))
