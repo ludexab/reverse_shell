@@ -9,7 +9,7 @@ def create_socket():
     
     host = ''
     port = 7878
-    soc = socket.socket()
+    soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
 def bind_socket():
@@ -23,8 +23,8 @@ def bind_socket():
         soc.listen(5)
         print('[+] listening for incoming connection...')
 
-        conn, address = soc.accept()
-        print('[i] connected to {}:{}'.format(host, port))
+        conn, clientAddress = soc.accept()
+        print('[i] connected to {}'.format(clientAddress))
         send_command(conn)
         conn.close()
     except ConnectionResetError:
